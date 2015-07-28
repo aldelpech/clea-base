@@ -1,0 +1,281 @@
+/*****************************************************
+*
+* Spécifique à Clea Base version impact v1.0
+* pour ne pas modifier la feuille de style originelle de Unique
+*
+******************************************************/
+
+
+/* 
+* .home for front page
+* .blog for post pages
+* .page for all pages
+* .single-post - All single post entries
+* .archive - Any category or date or tag archive page
+* .category - All category archive pages
+* .category-issues - Archive page of a specific category whose slug is "issues"
+* .category-18 - Archive page of a specific category whose ID is 18
+* .tag - Tag archive page
+* .page-id-500 - A specific Page whose ID is 500
+* .postid-392 - A specific Post whose ID is 391
+* .search - Search results listing page
+*/
+
+
+/******************
+* styles liés à la taille de l'écran
+******************/
+
+
+/* === MIN-WIDTH 760PX === */
+/* changer la largeur globale de page sur grand écran */
+@media only screen and (min-width: 760px) {
+	#container {
+		max-width: 900px;
+	}
+	#menu-secondary li a {
+		padding: 18px 25px;
+		text-transform: none;
+		font-size: 0.85rem;
+		font-weight: 400;
+	}
+
+	#site-description {
+		font-size: 1.1em ;
+		margin: 0 ;
+	}	
+
+	.topbar {
+		margin-bottom: 35px;
+	}
+
+	.top-search {
+		float: right ;
+		width: 25%;
+		margin-right: 0px;
+	}
+
+	.top-social {
+		float: left ;
+	}
+	
+	#sidebar-header {
+		width: 35%;
+		float: right;
+		margin-right: -40px;
+		display: table;
+	}	
+
+	#header {
+		position: relative;    	/* and inside it hgroup#branding will have an absolute position */
+		min-height: 75px;
+	}
+
+	hgroup#branding {
+		width: 60%;
+		margin-left: -25px;
+		margin-bottom: 10px;
+		position: absolute; 	/* inside #header with relative position */
+		bottom: 0;
+	}
+	
+	#container > div.topbar > div.top-search > form > div {
+		float: right ;
+	}
+}
+
+
+/* === MIN-WIDTH 480px === */
+@media only screen and (min-width: 480px) {
+	
+
+	
+}
+
+/* === MAX-WIDTH 760px === */
+@media only screen and (max-width: 760px) {
+	
+	#menu-secondary {
+		background-color: transparent ;
+	}
+	
+	.menu-toggle:hover, 
+	.menu-toggle.active {
+		color: #ffffff !important;
+		text-decoration: none !important;
+	}
+	
+	#site-description {
+		font-size: 0.8em ;
+		display:   inline;
+		margin:    0 0 0 15px;
+	}
+	
+	hgroup#branding {
+		width: 100%;
+		margin-left: 0;
+		margin-bottom: 5px;
+	}
+	
+	#sidebar-header {
+		display: none ;  /* only for small screens ! */
+	}
+
+	.topbar {
+		margin-bottom: 0px;
+	}
+	
+	.top-search {
+		width: 90%;
+		margin-top: 5px;
+	}
+
+	.top-social {
+		float: none;
+	}
+	
+	#sidebar-header {
+		display: none ;
+	}
+}
+
+
+/******************
+* styles sans lien avec taille écran
+******************/
+
+#container > div.topbar > div.top-search > form > div > button {
+	display: inline-block;
+	font-size: 120%;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	text-align: center;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transition: all 0.4s ease 0s;
+	padding: 5px;
+	border-radius: 2px;
+	margin-right: 8px;
+}
+
+.top-search .search-form input[type="text"] {
+	width: 134px;
+	height: 21px;
+	margin-top: 0px;
+	font-family: Georgia,Times,'Times New Roman',serif;
+	font-size: 0.8125rem;
+	font-style: italic;
+	line-height: 13px;
+	border: 1px solid #DDDDDD;
+    color: #666666;
+	cursor: pointer;
+	-webkit-transition: all 0.5s ease-out;
+	-moz-transition: all 0.5s ease-out;
+	-o-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+
+#header {
+	background: #fefefe;
+	margin-bottom: 0px !important;
+}
+
+#footer .footer-content {
+	color: #fefefe !important;
+}
+
+#site-title {
+	display: none ;
+}
+#container {
+	padding: 15px 0 0;
+}
+
+
+/******************
+* Vieux exemple du site prosiad avec daughter of firmness 
+******************/
+
+
+.home #content.hfeed,
+.home h2.gallery-title {
+	border-top: 3px dotted ;  	/* color is defined in functions.php */
+	padding-top: 15px;
+}
+
+.topbar {
+	display: block;
+	padding: 5px;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	margin-left: 25px;
+}
+
+.ald-unique-logo {
+	/* float: left; 
+	display: table; */
+	margin-right: 10px;
+}
+
+.ald-unique-logo  a img {
+	margin-bottom: 0px;
+	padding: 0px; 
+	background: none ;
+	border: none ;
+}
+
+#site-title {
+	font-size: 1.5em ;
+	display: none !important ;   /* do not display site title */
+}
+
+#site-description {
+	font-style: normal !important;
+	font-weight: bold;
+	font-family: 'Open Sans' !important;
+}
+
+ul#social {
+	display: inline-block;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	margin-left: 0;
+	margin-bottom: 0px;
+}
+
+ul#social li  {
+	display: inline-block ;
+	line-height: 30px;
+	text-align: center;
+	transition: all 0.4s ease 0s;
+}
+
+ul#social li a {
+	font-size: 120%;
+	padding: 5px;
+	border-radius: 2px;
+	margin-right: 8px;
+}
+
+/* other */
+.page-template-magazine .content-secondary .entry-byline {
+display: none; /* so that meta description is not displayed on front page */
+}
+
+
+#sidebar-header  p {
+	font-size: 90%; 	
+	text-align: right;
+	margin-bottom: 0px ;
+}
+
+/* slider */
+.page-template-magazine .flexslider .slide-caption {
+	width:      50% !important;
+}
