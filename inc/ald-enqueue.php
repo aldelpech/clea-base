@@ -5,7 +5,7 @@
  *
  * @package    clea-base
  * @subpackage Functions
- * @version    1.0.0
+ * @version    1.1.0
  * Text Domain: clea-base
  */
  
@@ -21,9 +21,17 @@ add_action( 'wp_enqueue_scripts', 'clea_base_enqueue_scripts' );
  */
 function clea_base_enqueue_styles() {
 	
-	// used to display the social media icons
-	wp_enqueue_style( 'font-awesome', trailingslashit( THEME_URI ) . 'css/font-awesome.min.css' );
-	// specific style added to the unique style.css file
+	/*
+	* enqueue font awesome 4.0 from CDN
+	* @since  1.1.0
+	*/
+	wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css' );
+	
+
+	/*
+	* @since  1.1.0
+	* specific style added to the unique style.css file
+	*/
 	wp_enqueue_style( 'clea-specific', trailingslashit( THEME_URI ) . 'css/clea-specific.css' );	
 } 
 

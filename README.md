@@ -1,5 +1,7 @@
-# plugin wordpress - version de base
+# Thème CLEA de base (impact)
 ==========
-## pour générer des présentations produit satisfaisantes
+## Qu'est-ce que c'est :
+Un thème construit à partir de Unique (Theme Hybrid)
 
-* explications à créer
+## change log
+* Version 1.1 = enqueue font awesome 4.0 from CDN
