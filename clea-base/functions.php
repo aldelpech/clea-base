@@ -62,7 +62,7 @@ function unique_theme_setup() {
 	/* Add theme support for core framework features. */
 	add_theme_support( 'hybrid-core-menus', array( 'primary', 'secondary', 'subsidiary' ) );
 	add_theme_support( 'hybrid-core-sidebars', array( 'primary', 'secondary', 'subsidiary' ) );
-	add_theme_support( 'hybrid-core-widgets' );
+	add_theme_support( 'hybrid-core-widgets' ); 
 	add_theme_support( 'hybrid-core-shortcodes' );
 	add_theme_support( 'hybrid-core-scripts', array( 'comment-reply' ) );
 	add_theme_support( 'hybrid-core-styles', array( '25px', 'gallery', 'parent', 'style' ) );
@@ -131,7 +131,7 @@ function unique_theme_setup() {
 	hybrid_set_content_width( 620 );
 
 	/* Filter the sidebar widgets. */
-	add_filter( 'sidebars_widgets', 'unique_disable_sidebars' );
+	add_filter( 'sidebars_widgets', 'unique_disable_sidebars' ); 
 	add_action( 'template_redirect', 'unique_theme_layout' );
 
 	/* Add classes to the comments pagination. */
@@ -142,7 +142,7 @@ function unique_theme_setup() {
 	add_filter( "{$prefix}_post_format_archive_gallery_columns", 'unique_archive_gallery_columns' );
 
 	/* Register additional widgets. */
-	add_action( 'widgets_init', 'unique_register_widgets' );
+	add_action( 'widgets_init', 'unique_register_widgets' ); 
 
 	/* Custom search form template. */
 	add_filter( 'get_search_form', 'unique_search_form' );
