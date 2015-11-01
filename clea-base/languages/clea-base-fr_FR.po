@@ -1,23 +1,24 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CLEA Base (impact)\n"
-"POT-Creation-Date: 2015-06-17 08:22+0100\n"
-"PO-Revision-Date: 2015-11-01 16:27+0100\n"
+"POT-Creation-Date: 2015-11-01 17:00+0100\n"
+"PO-Revision-Date: 2015-11-01 17:03+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.5\n"
-"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"Language: fr_FR\n"
-"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-0: languages\n"
+"X-Poedit-SearchPath-1: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
 #: 404.php:8
@@ -213,26 +214,34 @@ msgstr ""
 "Publié par [entry-author] le [entry-published] [entry-comments-link before="
 "\" | \"] [entry-edit-link before=\" | \"]"
 
-#: functions.php:368 searchform.php:20
+#: functions.php:378 searchform.php:20
 msgid "Enter search terms..."
 msgstr "Taper vos mots de recherche..."
 
-#: functions.php:373 library/classes/widget-search.php:45
+#: functions.php:383 library/classes/widget-search.php:45
 #: library/classes/widget-search.php:132
 msgid "Search"
 msgstr "Recherche"
 
-#: functions.php:395
+#: functions.php:405
 msgid "Twitter Username"
 msgstr ""
 
-#: functions.php:398
+#: functions.php:408
 msgid "Google+ URL"
 msgstr ""
 
-#: functions.php:401
+#: functions.php:411
 msgid "Facebook URL"
 msgstr ""
+
+#: functions.php:505
+msgid "&laquo; Previous"
+msgstr "&laquo; Préc."
+
+#: functions.php:506
+msgid "Next &raquo;"
+msgstr "Suiv. &raquo;"
 
 #: inc/ald-custom-colors.php:25
 msgid "Primary Color"
@@ -1747,6 +1756,22 @@ msgstr "Voir l'Archive &rarr;"
 msgid "Latest Galleries"
 msgstr "Les dernières galeries"
 
+#: page/test-page-template.php:100
+msgid "<p>logo_upload : "
+msgstr ""
+
+#: page/test-page-template.php:102
+msgid "<p>logo_upload : pas trouvé ! </p>"
+msgstr ""
+
+#: page/test-page-template.php:105
+msgid "<p>logo_width : "
+msgstr ""
+
+#: page/test-page-template.php:107
+msgid "<p>logo_width : pas trouvé ! </p>"
+msgstr ""
+
 #: search.php:22
 #, php-format
 msgid "[entry-published] &mdash; <code>%s</code>"
@@ -1757,8 +1782,7 @@ msgid "CLEA Base (impact)"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-#. Author URI of the plugin/theme
-msgid "http://parcours-performance.com/anne-laure-delpech/"
+msgid "http://potentiel-web.com/"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -1770,4 +1794,8 @@ msgstr ""
 
 #. Author of the plugin/theme
 msgid "Anne-Laure Delpech"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://potentiel-web.com/anne-laure-delpech"
 msgstr ""
