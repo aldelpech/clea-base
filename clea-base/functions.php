@@ -502,6 +502,12 @@ function clea_base_pagination_args( $args ) {
 
 	$args['mid_size']	= 0;
 	$args['end_size']	= 1; 
+	$args['prev_text']	= __( '&laquo; Previous', 'clea-base' ) ; // This is the WordPress default. 	
+	$args['next_text']	= __( 'Next &raquo;', 'clea-base' ) ; // This is the WordPress default. 		
+
+	/* 'Next &rarr;'  'Next &raquo;'  */ 
+	/* '&laquo; Previous'  '&larr; Previous'  */ 
+
 
 	return $args;
 }

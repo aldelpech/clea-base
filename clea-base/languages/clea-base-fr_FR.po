@@ -2,13 +2,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CLEA Base (impact)\n"
 "POT-Creation-Date: 2015-06-17 08:22+0100\n"
-"PO-Revision-Date: 2015-06-17 10:58+0100\n"
+"PO-Revision-Date: 2015-11-01 16:27+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.1\n"
+"X-Generator: Poedit 1.8.5\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -84,7 +84,7 @@ msgstr "Une réponse"
 
 #: comments.php:13
 msgid "% Responses"
-msgstr "% Réponses"
+msgstr "Responsive"
 
 #: comments.php:17
 msgid "&larr; Previous"
@@ -390,8 +390,7 @@ msgid "Pinterest"
 msgstr ""
 
 #: inc/ald-custom-header.php:57 library/classes/widget-bookmarks.php:208
-#: library/classes/widget-categories.php:187
-#: page/page-template-archives.php:34
+#: library/classes/widget-categories.php:187 page/page-template-archives.php:34
 msgid "RSS"
 msgstr ""
 
@@ -570,9 +569,8 @@ msgstr ""
 #: library/classes/widget-bookmarks.php:217
 #: library/classes/widget-calendar.php:108
 #: library/classes/widget-categories.php:195
-#: library/classes/widget-nav-menu.php:131
-#: library/classes/widget-pages.php:178 library/classes/widget-search.php:144
-#: library/classes/widget-tags.php:207
+#: library/classes/widget-nav-menu.php:131 library/classes/widget-pages.php:178
+#: library/classes/widget-search.php:144 library/classes/widget-tags.php:207
 msgid "Title:"
 msgstr "Titre : "
 
@@ -864,8 +862,7 @@ msgstr ""
 "Un widget avancé qui vous donne le contrôle du contenu de vos listes "
 "d'auteurs"
 
-#: library/classes/widget-authors.php:44
-#: library/classes/widget-authors.php:123
+#: library/classes/widget-authors.php:44 library/classes/widget-authors.php:123
 msgid "Authors"
 msgstr "Auteurs"
 
@@ -979,8 +976,7 @@ msgstr ""
 msgid "Owner"
 msgstr "Propriétaire"
 
-#: library/classes/widget-bookmarks.php:205
-#: library/classes/widget-tags.php:188
+#: library/classes/widget-bookmarks.php:205 library/classes/widget-tags.php:188
 msgid "Random"
 msgstr "Aléatoire"
 
