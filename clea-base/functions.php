@@ -150,8 +150,11 @@ function clea_base_theme_setup() {
 	// remove the original WP filter, which trims all excerpts to 55 words and 0 html tags
 	remove_filter('get_the_excerpt', 'wp_trim_excerpt');
 
-	// add the CLEA-BASE filter
+	// trim excerpt but don't trim html tags
 	add_filter('get_the_excerpt', 'clea_base_custom_wp_trim_excerpt');
+
+	// change pagination parameters
+	add_filter( 'loop_pagination_args', 'clea_base_pagination_args' );
 	
 }
 
@@ -492,6 +495,17 @@ function clea_base_custom_wp_trim_excerpt( $text ) {
 	return apply_filters( 'wp_trim_excerpt', $text, $raw_excerpt );
 
 }
+
+
+
+function clea_base_pagination_args( $args ) {
+
+	$args['mid_size']	= 0;
+	$args['end_size']	= 1; 
+
+	return $args;
+}
+
 
 
 ?>
