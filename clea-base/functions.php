@@ -33,7 +33,7 @@ require_once( trailingslashit( get_template_directory() ) . 'library/hybrid.php'
 new Hybrid();
 
 /* Do theme setup on the 'after_setup_theme' hook. */
-add_action( 'after_setup_theme', 'unique_theme_setup' );
+add_action( 'after_setup_theme', 'clea_base_theme_setup' );
 
 
 
@@ -43,12 +43,12 @@ add_action( 'after_setup_theme', 'unique_theme_setup' );
  *
  * @since 0.1.0
  */
-function unique_theme_setup() {
+function clea_base_theme_setup() {
 
 	/* Get action/filter hook prefix. */
 	$prefix = hybrid_get_prefix();
 
-	/* Load unique theme includes. */
+	/* Load clea_base theme includes. */
 	require_once( trailingslashit( THEME_DIR ) . 'inc/media.php' );
 
 	/* load clea-base theme includes */
@@ -104,7 +104,7 @@ function unique_theme_setup() {
 		array(
 			'default-color'    => 'f1f1f1',
 			'default-image'    => trailingslashit( get_template_directory_uri() ) . 'images/bg.png',
-			'wp-head-callback' => 'unique_custom_background_callback'
+			'wp-head-callback' => 'clea_base_custom_background_callback'
 		)
 	);
 
@@ -112,7 +112,7 @@ function unique_theme_setup() {
 	add_theme_support( 'whistles', array( 'styles' => true ) );
 
 	/* Embed width/height defaults. */
-	add_filter( 'embed_defaults', 'unique_embed_defaults' );
+	add_filter( 'embed_defaults', 'clea_base_embed_defaults' );
 
 	/* add color choices in WordPress theme customizer */
 	/* chun_register_color is set in ald-custom-colors.php */
@@ -131,21 +131,28 @@ function unique_theme_setup() {
 	hybrid_set_content_width( 620 );
 
 	/* Filter the sidebar widgets. */
-	add_filter( 'sidebars_widgets', 'unique_disable_sidebars' ); 
-	add_action( 'template_redirect', 'unique_theme_layout' );
+	add_filter( 'sidebars_widgets', 'clea_base_disable_sidebars' ); 
+	add_action( 'template_redirect', 'clea_base_theme_layout' );
 
 	/* Add classes to the comments pagination. */
-	add_filter( 'previous_comments_link_attributes', 'unique_previous_comments_link_attributes' );
-	add_filter( 'next_comments_link_attributes', 'unique_next_comments_link_attributes' );
+	add_filter( 'previous_comments_link_attributes', 'clea_base_previous_comments_link_attributes' );
+	add_filter( 'next_comments_link_attributes', 'clea_base_next_comments_link_attributes' );
 
 	/* Filters the image/gallery post format archive galleries. */
-	add_filter( "{$prefix}_post_format_archive_gallery_columns", 'unique_archive_gallery_columns' );
+	add_filter( "{$prefix}_post_format_archive_gallery_columns", 'clea_base_archive_gallery_columns' );
 
 	/* Register additional widgets. */
-	add_action( 'widgets_init', 'unique_register_widgets' ); 
+	add_action( 'widgets_init', 'clea_base_register_widgets' ); 
 
 	/* Custom search form template. */
-	add_filter( 'get_search_form', 'unique_search_form' );
+	add_filter( 'get_search_form', 'clea_base_search_form' );
+	
+	// remove the original WP filter, which trims all excerpts to 55 words and 0 html tags
+	remove_filter('get_the_excerpt', 'wp_trim_excerpt');
+
+	// add the CLEA-BASE filter
+	add_filter('get_the_excerpt', 'clea_base_custom_wp_trim_excerpt');
+	
 }
 
 /**
@@ -155,7 +162,7 @@ function unique_theme_setup() {
  * @access public
  * @return void
  */
-function unique_register_widgets() {
+function clea_base_register_widgets() {
 
 	/* Load and register the user profile widget. */
 	require_once( trailingslashit( THEME_DIR ) . 'inc/widget-user-profile.php' );
@@ -183,7 +190,7 @@ function unique_register_widgets() {
  * @param int $columns Number of gallery columns to display.
  * @return int $columns
  */
-function unique_archive_gallery_columns( $columns ) {
+function clea_base_archive_gallery_columns( $columns ) {
 
 	/* Only run the code if the theme supports the 'theme-layouts' feature. */
 	if ( current_theme_supports( 'theme-layouts' ) ) {
@@ -208,16 +215,16 @@ function unique_archive_gallery_columns( $columns ) {
  * @access public
  * @return void
  */
-function unique_theme_layout() {
+function clea_base_theme_layout() {
 
 	if ( !is_active_sidebar( 'primary' ) && !is_active_sidebar( 'secondary' ) )
-		add_filter( 'theme_mod_theme_layout', 'unique_theme_layout_one_column' );
+		add_filter( 'theme_mod_theme_layout', 'clea_base_theme_layout_one_column' );
 
 	elseif ( is_attachment() && wp_attachment_is_image() && 'default' == get_post_layout( get_queried_object_id() ) )
-		add_filter( 'theme_mod_theme_layout', 'unique_theme_layout_one_column' );
+		add_filter( 'theme_mod_theme_layout', 'clea_base_theme_layout_one_column' );
 
 	elseif ( is_page_template( 'page/page-template-magazine.php' ) )
-		add_filter( 'theme_mod_theme_layout', 'unique_theme_layout_one_column' );
+		add_filter( 'theme_mod_theme_layout', 'clea_base_theme_layout_one_column' );
 }
 
 /**
@@ -228,7 +235,7 @@ function unique_theme_layout() {
  * @param string $layout The layout of the current page.
  * @return string
  */
-function unique_theme_layout_one_column( $layout ) {
+function clea_base_theme_layout_one_column( $layout ) {
 	return '1c';
 }
 
@@ -240,7 +247,7 @@ function unique_theme_layout_one_column( $layout ) {
  * @param array $sidebars_widgets A multidimensional array of sidebars and widgets.
  * @return array $sidebars_widgets
  */
-function unique_disable_sidebars( $sidebars_widgets ) {
+function clea_base_disable_sidebars( $sidebars_widgets ) {
 
 	if ( current_theme_supports( 'theme-layouts' ) && !is_admin() ) {
 
@@ -263,7 +270,7 @@ function unique_disable_sidebars( $sidebars_widgets ) {
  * @param array $args Default embed arguments.
  * @return array
  */
-function unique_embed_defaults( $args ) {
+function clea_base_embed_defaults( $args ) {
 
 	$args['width'] = 620;
 
@@ -288,7 +295,7 @@ function unique_embed_defaults( $args ) {
  * @param string $attributes The previous comments link attributes.
  * @return string
  */
-function unique_previous_comments_link_attributes( $attributes ) {
+function clea_base_previous_comments_link_attributes( $attributes ) {
 	return $attributes . ' class="prev"';
 }
 
@@ -300,7 +307,7 @@ function unique_previous_comments_link_attributes( $attributes ) {
  * @param string $attributes The next comments link attributes.
  * @return string
  */
-function unique_next_comments_link_attributes( $attributes ) {
+function clea_base_next_comments_link_attributes( $attributes ) {
 	return $attributes . ' class="next"';
 }
 
@@ -314,7 +321,7 @@ function unique_next_comments_link_attributes( $attributes ) {
  * @link http://core.trac.wordpress.org/ticket/16919
  * @return void
  */
-function unique_custom_background_callback() {
+function clea_base_custom_background_callback() {
 
 	// $background is the saved custom image or the default image.
 	$background = get_background_image();
@@ -362,7 +369,7 @@ function unique_custom_background_callback() {
  * @param  string  $form
  * @return string
  */
-function unique_search_form( $form ) {
+function clea_base_search_form( $form ) {
 
 	$value       = get_search_query() ? esc_attr( get_search_query() ) : '';
 	$placeholder = esc_attr__( 'Enter search terms...', 'clea-base' );
@@ -388,7 +395,7 @@ function unique_search_form( $form ) {
  * @param      array   $meta  Array of contact methods.
  * @return     array   $meta
  */
-function unique_contact_methods( $meta ) {
+function clea_base_contact_methods( $meta ) {
 	_deprecated_function( __FUNCTION__, '0.3.0' );
 
 	/* Twitter contact method. */
@@ -405,7 +412,7 @@ function unique_contact_methods( $meta ) {
 }
 
 /**
- * Registers shortcodes for the Unique theme.
+ * Registers shortcodes for the clea_base theme.
  *
  * @note This function is no longer used by the theme and only exists for backwards compatibility.
  *
@@ -414,14 +421,14 @@ function unique_contact_methods( $meta ) {
  * @accesss    public
  * @return     void
  */
-function unique_register_shortcodes() {
+function clea_base_register_shortcodes() {
 	_deprecated_function( __FUNCTION__, '0.3.0' );
 
 	/* Adds the [entry-mood] shortcode. */
-	add_shortcode( 'entry-mood', 'unique_entry_mood_shortcode' );
+	add_shortcode( 'entry-mood', 'clea_base_entry_mood_shortcode' );
 
 	/* Adds the [entry-views] shortcode. */
-	add_shortcode( 'entry-views', 'unique_entry_views_shortcode' );
+	add_shortcode( 'entry-views', 'clea_base_entry_views_shortcode' );
 }
 
 /**
@@ -435,7 +442,7 @@ function unique_register_shortcodes() {
  * @param      array   $attr The shortcode arguments.
  * @return     string
  */
-function unique_entry_mood_shortcode( $attr ) {
+function clea_base_entry_mood_shortcode( $attr ) {
 	_deprecated_function( __FUNCTION__, '0.3.0' );
 
 	$attr = shortcode_atts( array( 'before' => '', 'after' => '' ), $attr );
@@ -447,5 +454,44 @@ function unique_entry_mood_shortcode( $attr ) {
 
 	return $mood;
 }
+
+
+function clea_base_custom_wp_trim_excerpt( $text ) {
+/* see http://bacsoftwareconsulting.com/blog/index.php/wordpress-cat/how-to-preserve-html-tags-in-wordpress-excerpt-without-a-plugin/ 
+*/	
+	$raw_excerpt = $text;
+
+	if ( '' == $text ) {
+		//Retrieve the post content. 
+		$text = get_the_content( '' );
+	 
+		//Delete all shortcode tags from the content. 
+		$text = strip_shortcodes( $text );
+	 
+		$text = apply_filters( 'the_content', $text );
+		$text = str_replace( ']]>', ']]&gt;', $text );
+		 
+		$allowed_tags = '<p>,<a>,<em>,<strong>'; /*** MODIFY THIS. Add the allowed HTML tags separated by a comma.***/
+		$text = strip_tags( $text, $allowed_tags );
+		 
+		$excerpt_word_count = 100; /*** MODIFY THIS. change the excerpt word count to any integer you like.***/
+		$excerpt_length = apply_filters( 'excerpt_length', $excerpt_word_count ); 
+		 
+		$excerpt_end = ' (...) '; /*** MODIFY THIS. change the excerpt endind to '[...]'.***/
+		$excerpt_more = apply_filters( 'excerpt_more', ' ' . $excerpt_end );
+		 
+		$words = preg_split( "/[\n\r\t ]+/", $text, $excerpt_length + 1, PREG_SPLIT_NO_EMPTY );
+		if ( count($words) > $excerpt_length ) {
+			array_pop( $words );
+			$text = implode( ' ', $words );
+			$text = $text . $excerpt_more;
+		} else {
+			$text = implode( ' ', $words );
+		}
+	}
+	return apply_filters( 'wp_trim_excerpt', $text, $raw_excerpt );
+
+}
+
 
 ?>
