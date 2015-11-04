@@ -101,9 +101,22 @@
 	
 	.menu-toggle:hover, 
 	.menu-toggle.active {
-		color: #ffffff !important;
+		/* color: #ffffff !important; */
 		text-decoration: none !important;
 	}
+
+	#menu-primary .wrap, #menu-secondary .wrap {
+		background: transparent !important; 
+	}
+	
+	#menu-primary li a, 
+	#menu-primary ul ul,
+	#menu-secondary li a, 
+	#menu-secondary ul ul {
+		background-color: transparent !important;
+	}
+	
+
 	
 	#site-description {
 		font-size: 0.8em ;
