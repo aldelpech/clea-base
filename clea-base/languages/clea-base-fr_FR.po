@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CLEA Base (impact)\n"
 "POT-Creation-Date: 2015-11-01 17:00+0100\n"
-"PO-Revision-Date: 2015-11-01 17:03+0100\n"
+"PO-Revision-Date: 2015-11-10 14:07+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -73,19 +73,19 @@ msgstr "Vous êtes ici : "
 
 #: comment.php:11
 msgid "Your comment is awaiting moderation."
-msgstr "Votre commentaire est maintenant en attente de modération. Merci. "
+msgstr "Votre commentaire est en attente de modération. Merci. "
 
 #: comments.php:13
 msgid "No Responses"
-msgstr "Pas de réponses"
+msgstr "Pas de commentaires"
 
 #: comments.php:13
 msgid "One Response"
-msgstr "Une réponse"
+msgstr "Un commentaire"
 
 #: comments.php:13
 msgid "% Responses"
-msgstr "Responsive"
+msgstr "% commentaires"
 
 #: comments.php:17
 msgid "&larr; Previous"
@@ -1373,7 +1373,7 @@ msgstr ""
 
 #: library/functions/comments.php:202
 msgid "Leave a Reply"
-msgstr "Laisser une réponse"
+msgstr "Ecrire un commentaire"
 
 #: library/functions/comments.php:203
 #, php-format
@@ -1382,11 +1382,11 @@ msgstr "écrire une réponse à %s"
 
 #: library/functions/comments.php:204
 msgid "Click here to cancel reply."
-msgstr "Cliquer ici pour annuler la réponse."
+msgstr "Cliquer ici pour annuler le commentaire."
 
 #: library/functions/comments.php:205
 msgid "Post Comment"
-msgstr "Commentaire pour l'article"
+msgstr "Publier le commentaire"
 
 #: library/functions/context.php:553 library/functions/context.php:559
 #: library/functions/context.php:562 library/functions/context.php:568
@@ -1536,23 +1536,23 @@ msgstr "Modifier %1$s"
 
 #: library/functions/shortcodes.php:257
 msgid "Leave a response"
-msgstr "Ecrire une réponse"
+msgstr "Ecrire un commentaire"
 
 #: library/functions/shortcodes.php:258
 #, php-format
 msgid "%1$s Response"
-msgstr "%1$s réponse"
+msgstr "%1$s commentaire"
 
 #: library/functions/shortcodes.php:259
 #, php-format
 msgid "%1$s Responses"
-msgstr "%1$s Réponses"
+msgstr "%1$s commentaires"
 
 #: library/functions/shortcodes.php:274 library/functions/shortcodes.php:276
 #: library/functions/shortcodes.php:278
 #, php-format
 msgid "Comment on %1$s"
-msgstr "Les commentaires sur %1$s"
+msgstr "Commentez %1$s"
 
 #: library/functions/shortcodes.php:385
 msgid "Shortlink"
