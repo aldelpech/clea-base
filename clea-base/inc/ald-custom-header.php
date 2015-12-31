@@ -68,7 +68,7 @@ function clea_base_add_html_to_header() {
 			<form method="get" class="search-form" action="<?php echo trailingslashit( home_url() ); ?>">
 				<div>
 				<input class="search-text" type="text" name="s" value="<?php if ( is_search() ) echo esc_attr( get_search_query() ); else esc_attr_e( 'Rechercher...', 'clea-base' ); ?>" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" />
-				<button name="submit" type="submit" class="fa-search fa-fw"></button>
+				<button name="submit" type="submit" class="fa-search fa-fw" ></button>
 				</div>
 			</form><!-- .search-form -->
 		</div>  <!-- top-search -->
