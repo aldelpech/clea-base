@@ -20,7 +20,7 @@
  *
  * @package    clea-base
  * @subpackage Functions
- * @version    1.1.0
+ * @version    1.1.1
  * @since      0.1.0
  * @author     Anne-Laure Delpech <ald.kerity@gmail.com>  & Justin Tadlock <justin@justintadlock.com>
  * @copyright  Copyright (c) 2012 - 2013, Justin Tadlock & Anne-Laure Delpech
