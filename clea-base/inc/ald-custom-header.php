@@ -68,7 +68,7 @@ function clea_base_add_html_to_header() {
 			<form method="get" class="search-form" action="<?php echo trailingslashit( home_url() ); ?>">
 				<div>
 				<input class="search-text" type="text" name="s" value="<?php if ( is_search() ) echo esc_attr( get_search_query() ); else esc_attr_e( 'Rechercher...', 'clea-base' ); ?>" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" />
-				<button name="submit" type="submit" class="fa-search fa-fw" ></button>
+				<button name="submit" type="submit" class="fa-search fa-large"></button>
 				</div>
 			</form><!-- .search-form -->
 		</div>  <!-- top-search -->
@@ -82,7 +82,7 @@ function clea_base_add_logo_to_header() {
 	$ald_logo .='<a href="' . esc_attr( get_site_url() ) ;
 	$ald_logo .= '"><img class="alignnone size-medium wp-image-201" src="' ;
 	$ald_logo .= esc_attr( hybrid_get_setting( 'logo_upload' ) ) ;
-	$ald_logo .= '" alt="logo" width="' . esc_attr( hybrid_get_setting( 'logo_width' ) ) . '" height="' .  esc_attr( hybrid_get_setting( 'logo_height' ) ) . '" /></a></div>' ;	
+	$ald_logo .= '" alt="logo" width="' . esc_attr( hybrid_get_setting( 'logo_width' ) ) . '" height="' .  esc_attr( hybrid_get_setting( 'logo_height' ) ) . '" /></div>' ;	
 	
 	/* for now add an image stored in the images directory of the child theme 
 	$ald_logo = '<div class="ald-unique-logo">' ;		

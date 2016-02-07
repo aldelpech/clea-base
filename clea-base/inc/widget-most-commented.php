@@ -22,7 +22,7 @@ class Unique_Widget_Most_Commented extends WP_Widget {
 	 *
 	 * @since 0.1.0
 	 */
-	function __construct() {
+	public function __construct(){
 
 		/* Set up the widget options. */
 		$widget_options = array(
@@ -46,7 +46,7 @@ class Unique_Widget_Most_Commented extends WP_Widget {
 	 *
 	 * @since 0.1.0
 	 */
-	function widget( $args, $instance ) {
+	public function widget( $args, $instance ) {
 		extract( $args );
 
 		/* Arguments for the query. */
@@ -105,7 +105,7 @@ class Unique_Widget_Most_Commented extends WP_Widget {
 	 *
 	 * @since 0.1.0
 	 */
-	function update( $new_instance, $old_instance ) {
+	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 
 		/* Set the instance to the new instance. */
@@ -124,7 +124,7 @@ class Unique_Widget_Most_Commented extends WP_Widget {
 	 *
 	 * @since 0.1.0
 	 */
-	function form( $instance ) {
+	public function form( $instance ) {
 
 		/* Set up the defaults. */
 		$defaults = array(

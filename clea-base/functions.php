@@ -142,16 +142,16 @@ function clea_base_theme_setup() {
 	add_filter( "{$prefix}_post_format_archive_gallery_columns", 'clea_base_archive_gallery_columns' );
 
 	/* Register additional widgets. */
-	// add_action( 'widgets_init', 'clea_base_register_widgets' ); 
+	add_action( 'widgets_init', 'clea_base_register_widgets' ); 
 
 	/* Custom search form template. */
 	add_filter( 'get_search_form', 'clea_base_search_form' );
 	
 	// remove the original WP filter, which trims all excerpts to 55 words and 0 html tags
-	remove_filter('get_the_excerpt', 'wp_trim_excerpt');
+	// remove_filter('get_the_excerpt', 'wp_trim_excerpt');
 
 	// trim excerpt but don't trim html tags
-	add_filter('get_the_excerpt', 'clea_base_custom_wp_trim_excerpt');
+	// add_filter('get_the_excerpt', 'clea_base_custom_wp_trim_excerpt');
 
 	// change pagination parameters
 	add_filter( 'loop_pagination_args', 'clea_base_pagination_args' );
@@ -166,6 +166,10 @@ function clea_base_theme_setup() {
  * @return void
  */
 function clea_base_register_widgets() {
+
+	/* Load and register the most-commented posts widget. */
+	require_once( trailingslashit( THEME_DIR ) . 'inc/widget-most-commented.php' );
+	register_widget( 'Unique_Widget_Most_Commented' );
 
 }
 
