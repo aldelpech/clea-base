@@ -167,21 +167,6 @@ function clea_base_theme_setup() {
  */
 function clea_base_register_widgets() {
 
-	/* Load and register the user profile widget. */
-	require_once( trailingslashit( THEME_DIR ) . 'inc/widget-user-profile.php' );
-	register_widget( 'Unique_Widget_User_Profile' );
-
-	/* Load and register the most-commented posts widget. */
-	require_once( trailingslashit( THEME_DIR ) . 'inc/widget-most-commented.php' );
-	register_widget( 'Unique_Widget_Most_Commented' );
-
-	/* Load and register the gallery posts widget. */
-	require_once( trailingslashit( THEME_DIR ) . 'inc/widget-gallery-posts.php' );
-	register_widget( 'Unique_Widget_Gallery_Posts' );
-
-	/* Load and register the image posts widget. */
-	require_once( trailingslashit( THEME_DIR ) . 'inc/widget-image-posts.php' );
-	register_widget( 'Unique_Widget_Image_Posts' );
 }
 
 /**
