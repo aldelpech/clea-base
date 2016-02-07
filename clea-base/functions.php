@@ -62,7 +62,7 @@ function clea_base_theme_setup() {
 	/* Add theme support for core framework features. */
 	add_theme_support( 'hybrid-core-menus', array( 'primary', 'secondary', 'subsidiary' ) );
 	add_theme_support( 'hybrid-core-sidebars', array( 'primary', 'secondary', 'subsidiary' ) );
-	add_theme_support( 'hybrid-core-widgets' ); 
+	// add_theme_support( 'hybrid-core-widgets' ); 
 	add_theme_support( 'hybrid-core-shortcodes' );
 	add_theme_support( 'hybrid-core-scripts', array( 'comment-reply' ) );
 	add_theme_support( 'hybrid-core-styles', array( '25px', 'gallery', 'parent', 'style' ) );
@@ -142,7 +142,7 @@ function clea_base_theme_setup() {
 	add_filter( "{$prefix}_post_format_archive_gallery_columns", 'clea_base_archive_gallery_columns' );
 
 	/* Register additional widgets. */
-	add_action( 'widgets_init', 'clea_base_register_widgets' ); 
+	// add_action( 'widgets_init', 'clea_base_register_widgets' ); 
 
 	/* Custom search form template. */
 	add_filter( 'get_search_form', 'clea_base_search_form' );
