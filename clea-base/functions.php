@@ -20,7 +20,7 @@
  *
  * @package    clea-base
  * @subpackage Functions
- * @version    1.1.1
+ * @version    1.1.2
  * @since      0.1.0
  * @author     Anne-Laure Delpech <ald.kerity@gmail.com>  & Justin Tadlock <justin@justintadlock.com>
  * @copyright  Copyright (c) 2012 - 2013, Justin Tadlock & Anne-Laure Delpech
@@ -35,7 +35,8 @@ new Hybrid();
 /* Do theme setup on the 'after_setup_theme' hook. */
 add_action( 'after_setup_theme', 'clea_base_theme_setup' );
 
-
+/* add support for learndash : excerpt */
+add_action( 'init', 'clea_add_excerpt_to_learndash' );
 
 /**
  * Theme setup function.  This function adds support for theme features and defines the default theme
@@ -156,6 +157,19 @@ function clea_base_theme_setup() {
 	// change pagination parameters
 	add_filter( 'loop_pagination_args', 'clea_base_pagination_args' );
 	
+}
+
+/**
+ * add excerpt support to learndash custom post types
+ 
+ * @since  1.1.2
+ * @access public
+ * @return void
+ */
+function clea_add_excerpt_to_learndash() {
+	add_post_type_support( 'sfwd-courses', 'excerpt' );
+	add_post_type_support( 'sfwd-lessons', 'excerpt' );
+	add_post_type_support( 'sfwd-topic', 'excerpt' );
 }
 
 /**
